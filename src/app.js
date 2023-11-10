@@ -29,10 +29,12 @@ app.use(paginate.middleware(4, 50))
 // ************ Route System require and use() ************
 const mainRouter = require('./routes/main'); // Rutas main
 const productsRouter = require('./routes/products'); // Rutas /products
+const usersRouter = require('./routes/users')
 const adminRouter = require('./routes/apis')
 
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
+app.use('/users', usersRouter)
 app.use('/apis/products', adminRouter)
 
 
