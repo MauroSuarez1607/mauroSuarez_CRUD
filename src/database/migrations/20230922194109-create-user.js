@@ -22,6 +22,9 @@ module.exports = {
         allowNull : false,
          unique : true
       },
+      birthday: {
+        type : Sequelize.DATE
+      },
       password: {
         type: Sequelize.STRING,
         allowNull : false

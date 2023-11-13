@@ -30,7 +30,7 @@ app.use(paginate.middleware(4, 50))
 const mainRouter = require('./routes/main'); 
 const productsRouter = require('./routes/products'); 
 const usersRouter = require('./routes/users')
-const adminRouter = require('./routes/apis')
+const apiRouter = require('./routes/apis')
 
 app.use((req,res,next) => {
   if(req.session.userLogin){
@@ -42,7 +42,7 @@ app.use((req,res,next) => {
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter)
-app.use('/apis/products', adminRouter)
+app.use('/apis', apiRouter)
 
 
 app.use((req, res, next) => next(createError(404)));
